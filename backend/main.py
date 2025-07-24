@@ -12,13 +12,21 @@ from fastapi.middleware.cors import CORSMiddleware
 import cv2
 import tempfile
 import os
+from huggingface_hub import hf_hub_download
+
 
 app = FastAPI()
 
-# Load models
-audio_model = tf.keras.models.load_model("audio_deepfake_model.keras")
-image_model = tf.keras.models.load_model("efficient_final_model_finetuned_v3_90percent_cleaned.keras")
-video_model = tf.keras.models.load_model("video_phase2_final.keras")
+# Replace "your-username/your-repo" with actual repo ID on Hugging Face
+
+audio_model_path = hf_hub_download(repo_id="SindhuGattigoppula/Deepfake-models", filename="audio_deepfake_model.keras")
+image_model_path = hf_hub_download(repo_id="SindhuGattigoppula/Deepfake-models", filename="efficient_final_model_finetuned_v3_90percent_cleaned.keras")
+video_model_path = hf_hub_download(repo_id="SindhuGattigoppula/Deepfake-models", filename="video_phase2_final.keras")
+
+audio_model = tf.keras.models.load_model(audio_model_path)
+image_model = tf.keras.models.load_model(image_model_path)
+video_model = tf.keras.models.load_model(video_model_path)
+
 
 # CORS middleware
 app.add_middleware(
