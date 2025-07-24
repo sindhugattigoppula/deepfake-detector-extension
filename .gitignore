@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.keras
+*.zip
+*.log
+*.mp4

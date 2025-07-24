@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>DeepTrace Detector</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <h1>DeepTrace</h1>
+  <div class="card">
+    <h2>🖼️ Image</h2>
+    <button id="detectImg">Detect Page Image</button>
+    <div class="result" id="imgRes"></div>
+  </div>
+
+  <div class="card">
+    <h2>🎵 Audio</h2>
+    <button id="startAudio">Detect Page Audio</button>
+    <input type="file" id="audioInput" accept="audio/*">
+    <button id="uploadAudio">Upload Audio</button>
+    <div id="audioRes"></div>
+    <div class="result" id="audioRes"></div>
+  </div>
+
+  <div class="card">
+    <h2>🎥 Video</h2>
+    <button id="detectVid">Detect Page Video</button>
+    <div class="result" id="vidRes"></div>
+    <input type="file" id="videoInput" accept="video/*"/>
+    <button id="uploadVid">Detect Uploaded Video</button>
+    <div class="result" id="uploadRes"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
